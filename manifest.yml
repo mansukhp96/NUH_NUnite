@@ -7,7 +7,7 @@ applications:
   command: python manage.py start 0.0.0.0:$PORT
   memory: 512M
   domain: not-used.net
-  host: not-used
+  host: nunite
   env:
     FLASK_APP : server
     FLASK_DEBUG : false
