@@ -1,9 +1,11 @@
-#!/home/jon/Dropbox/prog/quiz_website/venv/bin/python
-# EASY-INSTALL-ENTRY-SCRIPT: 'pip==1.3.1','console_scripts','pip'
-__requires__ = 'pip==1.3.1'
-import sys
-from pkg_resources import load_entry_point
+#!/home/rob/PythonWebAppwithFlaskWJHMZ/venv/bin/python3
 
-sys.exit(
-   load_entry_point('pip==1.3.1', 'console_scripts', 'pip')()
-)
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from pip._internal import main
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
