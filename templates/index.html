@@ -4,9 +4,10 @@
     <div id='content'>
         <span id='title'>All Events</span>
         <a href="{{url_for('register')}}">Sign up or log in</a>
+        <a href="{{url_for('create')}}">New event</a>
         <ul>
-            {% for id, name in event_names %}
-                <li><a href="{{url_for('event', id=id)}}">{{name}}</a></li>
+            {% for event in events %}
+                <li><a href="{{url_for('event', id=events[event]['name'])}}">{{events[event]['name']}}</a></li>
             {% endfor %}
         </ul>
     </div>
