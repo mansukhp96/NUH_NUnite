@@ -1,0 +1,6 @@
+---
+applications:
+ - name: NUnite
+   command: python nunite_main.py
+   host: nunite
+   memory: 512m
