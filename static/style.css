@@ -4,6 +4,17 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
+
+.flashes {
+    color: #ffffff;
+    align: center;
+}
+
+.NUnite {
+    capitalize: none;
+    text-transform: none;
+}
+
 h4, h5, h6,
 h1, h2, h3 {
 	margin: 0;
@@ -148,7 +159,7 @@ h5.pro-link {
     color: #fff;
     font-size: 18px;
     font-weight: 300;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 h5.pro-link a:hover{
 	text-decoration:none;

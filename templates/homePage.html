@@ -1,95 +1,136 @@
 {% extends "base.html" %}
 
 {% block body %}
-		<div class="body-back">
-			<div class="masthead pdng-stn1">
+<div class="body-back">
+	<div class="masthead pdng-stn1">
 
-				<div class="phone-box wrap push" id="home">
-					<div class="menu-notify">
-						<div class="Profile-mid">
-							<h5 class="pro-link">NUnite</h5>
-						</div>
-						
-						<div class="clearfix"></div>
-					</div> 
+		<div class="phone-box wrap push" id="home">
+			<div class="menu-notify">
+				<div class="Profile-mid">
+					<a href="{{url_for('index')}}"><h5 class="pro-link">NUnite</h5></a>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
 
 
+			<div class="details-grid ht">
+				<div class="details-shade ">
+					<div class="details-right">
+						<h3 class="NUnite">NUnite</h3>
+						<h4>Select. Socialize. Succeed.</h4>
+					</div>
 
-					<div class="details-grid ht">
-						<div class="details-shade ">
-								<div class="details-right">
-									<h3>NUnite</h3>
-									<h4>Select. Socialize. Succeed.</h4>
-								</div>
+					<div class="banner_search">
+						<form action="#" method="post">
+							<input type="search" name="search" value="Search events" onfocus="this.value = '';"
+								   onblur="if (this.value == '') {this.value = 'Search events';}" required="">
+							<input type="submit" value=" ">
+						</form>
 
-								<div class="banner_search">
-										<form action="#">
-											<input type="search" name="search" value="Search events" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search events';}" required="">
-											<input type="submit" value=" ">
-										</form>
-										
-								</div>
-								
-								<div class="search">
+					</div>
+
+					<div class="search">
 									<form action="{{url_for('create')}}"><input type="submit" value="Create Event" method="get"></form>
 							 </div>
+				</div>
+			</div>
+
+
+			<div class="w3agile single-hotel">
+				<!--events-->
+				<!--/event1-->
+				<div class="hotel-rooms">
+					<div class="hotel-left">
+						<a href="#" data-toggle="modal" data-target="#myModalbook">Group study for Statistical
+							Modelling</a>
+						<p>Course tag: ALY6000</p>
+						<p>Location: 228 Richards Hall</p>
+						<p>Time Slot: 2:00 pm to 5:00 pm</p>
+						<div class="hotel-left-grids">
+							<div class="hotel-left-one">
+								<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="{{url_for('static', filename='images/h1.jpg')}}"
+																								alt=""></a>
+								<span class="sale-box">
+												<span class="sale-label">New</span>
+											</span>
+							</div>
+							<div class="hotel-left-two">
+								<a href="#" data-toggle="modal" data-target="#myModalbook">Location: 228 Richards
+									Hall</a>
+								<p>the goal is to study the multidisciplinary approach, promoting the
+									cross-fertilization of ideas between substantive research areas, as well as
+									providing a common forum for the comparison, unification and nurturing of modelling
+									issues across different subjects.</p>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 
+					<div class="clearfix"></div>
+				</div>
+				<!--//event1-->
+				<!--/event2-->
+				<div class="hotel-rooms">
+					<div class="hotel-left">
+						<a href="#" data-toggle="modal" data-target="#myModalbook">Live screening for the Red Sox vs.
+							Yankees game</a>
+						<p>October 8, 2018, 6:00 pm</p>
+						<div class="hotel-left-grids">
+							<div class="hotel-left-one">
+								<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="{{url_for('static', filename='images/h2.jpg')}}"
+																								alt=""></a>
 
-					<div class="w3agile single-hotel">
-						<!--events-->
-							<!--/event1-->
-							 <div class="hotel-rooms">
-								<div class="hotel-left">
-									<a href="#" data-toggle="modal" data-target="#myModalbook">NU Wins NASA RASC-AL Mars Ice Challenge</a>
-									<p>June 10, 2019</p>
-									<div class="hotel-left-grids">
-										<div class="hotel-left-one">
-											<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="{{url_for('static', filename='images/h1.jpg')}}" alt=""></a>
-											<span class="sale-box">
+							</div>
+
+							<div class="hotel-left-two">
+								<a href="#" data-toggle="modal" data-target="#myModalbook"></span>Location: Curry
+									Student Center</a>
+
+								<p>Enjoy the true sport culture of Boston by supporting the Red Sox who play the New
+									York Yankees today! Join us at Curry Student Centre and witness the true
+									madness.</p>
+
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+				<!--//event2-->
+				<!--/event3--><!--
+				<div class="hotel-rooms">
+					<div class="hotel-left"><!--
+						<a href="#" data-toggle="modal" data-target="#myModalbook">{{events['Bowling']['name']}}</a>
+						<p>Location: {{events['Bowling']['location']}}</p>
+						<p>Time Slot: {{events['Bowling']['date_and_time']}}</p>
+						<div class="hotel-left-grids">
+							<div class="hotel-left-one">
+								<!--<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="{{url_for('static', filename='images/h1.jpg')}}"
+																								alt=""></a>
+								<span class="sale-box">
 												<span class="sale-label">New</span>
 											</span>
-										</div>
-										<div class="hotel-left-two">
-											<!-- <a href="#" data-toggle="modal" data-target="#myModalbook"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a> -->
-											<p>Northeastern's undergraduate engineering team Wins First Place at the 2018 NASA RASC-AL Mars Ice Challenge, competing with 10 finalist teams at NASA's Langley Research Center.</p>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
-								
-								<div class="clearfix"></div>
 							</div>
-							<!--//event1-->
-							<!--/event2-->
-							 <div class="hotel-rooms">
-								<div class="hotel-left">
-									<a href="#" data-toggle="modal" data-target="#myModalbook">New Engineering Academic Programs </a>
-									<p>July 3, 2019</p>
-									<div class="hotel-left-grids">
-										<div class="hotel-left-one">
-											<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="url_for('static', filename='images/h2.jpg')}}" alt=""></a>
-											
-										</div>
-
-										<div class="hotel-left-two">
-											<!-- <a href="#" data-toggle="modal" data-target="#myModalbook"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Diamond Street</a> -->
-											
-											<p>It's a new academic year and with that, the College of Engineering has several exciting new multidisciplinary undergraduate and graduate programs available starting fall 2018 and spring 2019.</p>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
-								
-								<div class="clearfix"></div>
+							<div class="hotel-left-two">
+								<a href="#" data-toggle="modal" data-target="#myModalbook">Location: {{events['Bowling']['location']}}</a>
+								<p>{{events['Bowling']['description']}}</p>
+								<p>{{events}}</p>
 							</div>
-							<!--//event2-->
-							</div>>
-
+							<div class="clearfix"></div>
+						</div>
 					</div>
-						<!-- /hotel-single-->
-				
+
+					<div class="clearfix"></div>
+				</div>-->
+				<!--//event3-->
 			</div>
+			>
+
 		</div>
-	{% endblock %}
+		<!-- /hotel-single-->
+
+	</div>
+</div>
+{% endblock %}

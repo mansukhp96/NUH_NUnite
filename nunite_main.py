@@ -30,15 +30,15 @@ for thing in data:
         thing_name = thing['name']
         if new_type == 'event':
             events[thing_name] = thing
-            print(events[thing_name])
+            print(events[thing_name]['_id'])
         elif new_type == 'user':
             users[thing_name] = thing
         print('Loaded new %s: %s' % (new_type, thing_name))
-print(events)
+# print(events)
 # for event in os.listdir(event_dir):
 #    print('Loading', event)
 #    events[event] = json.loads(open(os.path.join(event_dir, event)).read())
-
+print(events)
 
 @app.route('/')
 def index():
@@ -67,8 +67,20 @@ def register():
 @app.route('/add_event', methods=['POST'])
 def add_event():
     flask.flash("Event created")
+    new_data = flask.request.form
+    # print(new_data)
+    new_event = {}
+    new_event['name'] = new_data['Name']
+    new_event['course'] = new_data['Course']
+    new_event['location'] = new_data['Location']
+    new_event['description'] = new_data['Description']
+    new_event['professor'] = new_data['Professor']
+    new_event['date_and_time'] = new_data['Date_and_time']
+    new_event['type'] = 'event'
+    payload = json.dumps(new_event)
 
-    return flask.render_template('index.html', events=events)
+    response = requests.request("POST", db_url, data=payload, headers=db_headers)
+    return flask.render_template('homepage.html', events=events)
 
 
 @app.route('/add_user', methods=['POST'])
