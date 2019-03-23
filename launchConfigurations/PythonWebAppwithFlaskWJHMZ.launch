@@ -1,0 +1,17 @@
+{
+  "ServiceId": "com.ibm.cloudoe.orion.client.deploy",
+  "Params": {
+    "Target": {
+      "Url": "https://api.ng.bluemix.net",
+      "Org": "hass.r@husky.neu.edu",
+      "Space": "dev"
+    },
+    "Name": "PythonWebAppwithFlaskWJHMZ",
+    "Instrumentation": {
+      "host": "nunite",
+      "domain": "mybluemix.net"
+    }
+  },
+  "Path": "manifest.yml",
+  "Type": "Cloud Foundry"
+}
