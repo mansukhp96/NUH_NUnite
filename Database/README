@@ -1,5 +1,0 @@
-DATABASE:
-
-1. Used rest db.io URL => restdb.io
-2. Student sample database is ready.
-3. GET and POST python files can read and write to db.
