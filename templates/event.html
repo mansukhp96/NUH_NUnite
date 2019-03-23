@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} {{event['name']}} {% endblock %}
+
+{% block body %}
+    <div id='content'>
+        <span id='title'>{% block page_title %} {{event['name']}} {% endblock %}</span>
+
+        <form method="post" action="/join/{{id}}">
+
+            <h2>{{event['name']}}</h2>
+            <strong>Type:</strong> <i>{{event['type']}}</i><br>
+            <strong>Location:</strong> <i>{{event['location']}}</i><br>
+            <strong>Datetime:</strong> <i>{{event['datetime']}}</i><br>
+            <strong>Approve guests:</strong> <i>{{event['approve_guests']}}</i><br>
+            <strong>Location hidden:</strong> <i>{{event['location_hidden']}}</i><br>
+            <strong>Description:</strong> <i>{{event['description']}}</i><br>
+            <br>
+
+        <input type="submit" value="Unite">
+        </form>
+
+        <br>
+        <a href="{{url_for('index')}}">Home</a>
+    </div>
+{% endblock %}
