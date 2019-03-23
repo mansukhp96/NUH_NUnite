@@ -19,7 +19,7 @@ db_headers = {
     'cache-control': "no-cache"
     }
 response = requests.request("GET", db_url, headers=db_headers)
-#print(response.text)
+# print(response.text)
 data = response.json()
 print("Loading from cloud")
 for thing in data:
@@ -35,7 +35,7 @@ for thing in data:
             users[thing_name] = thing
         print('Loaded new %s: %s' % (new_type, thing_name))
 print(events)
-#for event in os.listdir(event_dir):
+# for event in os.listdir(event_dir):
 #    print('Loading', event)
 #    events[event] = json.loads(open(os.path.join(event_dir, event)).read())
 
@@ -67,6 +67,13 @@ def register():
 @app.route('/add_event', methods=['POST'])
 def add_event():
     flask.flash("Event created")
+
+    return flask.render_template('index.html', events=events)
+
+
+@app.route('/add_user', methods=['POST'])
+def add_user():
+    flask.flash("Welcome to NUnite!")
     return flask.render_template('index.html', events=events)
 
 

@@ -1,32 +1,7 @@
-r
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html lang="en">
-<head>
-<title>NUnite</title>
-
-<meta charset utf="8">
-<!--font-awsome-css-->
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-<!--bootstrap-->
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<!--custom css-->
-	<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<!--component-css-->
-
-
-	<!-- web-fonts -->  
-  <link href='//fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<!-- //web-fonts -->
-	<script src="js/jquery.seat-charts.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/jquery.seat-charts.css">
-
-	</head>
-
-
-	<body>
-		<div class="body-back">
+{% block body %}
+<div class="body-back">
 			<div class="masthead pdng-stn1">
 
 				<div class="phone-box wrap push" id="home">
@@ -46,7 +21,7 @@ r
 									
 								</div>
 								<div class="login-form">
-									<form action="#" method="post">
+									<form action="add_user" method="post">
 										
 										<p>Name</p>
 										<input type="text" name="name" required=""/>
@@ -91,5 +66,4 @@ r
 				
 			</div>
 		</div>
-	</body>
-</html>
+	{% endblock %}

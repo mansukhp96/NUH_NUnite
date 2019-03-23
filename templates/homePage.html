@@ -23,13 +23,16 @@
 								</div>
 
 								<div class="banner_search">
-										<form action="#" method="post">
+										<form action="#">
 											<input type="search" name="search" value="Search events" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search events';}" required="">
 											<input type="submit" value=" ">
 										</form>
+										
 								</div>
-		
-						
+								
+								<div class="search">
+									<form action="{{url_for('create')}}"><input type="submit" value="Create Event" method="get"></form>
+							 </div>
 						</div>
 					</div>
 
@@ -39,7 +42,7 @@
 							<!--/event1-->
 							 <div class="hotel-rooms">
 								<div class="hotel-left">
-									<a href="#" data-toggle="modal" data-target="#myModalbook"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>NU Wins NASA RASC-AL Mars Ice Challenge</a>
+									<a href="#" data-toggle="modal" data-target="#myModalbook">NU Wins NASA RASC-AL Mars Ice Challenge</a>
 									<p>June 10, 2019</p>
 									<div class="hotel-left-grids">
 										<div class="hotel-left-one">
@@ -62,11 +65,11 @@
 							<!--/event2-->
 							 <div class="hotel-rooms">
 								<div class="hotel-left">
-									<a href="#" data-toggle="modal" data-target="#myModalbook"><span class="glyphicon glyphicon-bed" aria-hidden="true"></span>New Engineering Academic Programs </a>
+									<a href="#" data-toggle="modal" data-target="#myModalbook">New Engineering Academic Programs </a>
 									<p>July 3, 2019</p>
 									<div class="hotel-left-grids">
 										<div class="hotel-left-one">
-											<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="{{url_for('static', filename='images/h2.jpg')}}" alt=""></a>
+											<a href="#" data-toggle="modal" data-target="#myModalbook"><img src="url_for('static', filename='images/h2.jpg')}}" alt=""></a>
 											
 										</div>
 
@@ -89,4 +92,4 @@
 				
 			</div>
 		</div>
-{% endblock %}
+	{% endblock %}
