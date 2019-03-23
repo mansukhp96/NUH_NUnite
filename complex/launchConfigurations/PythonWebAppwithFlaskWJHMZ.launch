@@ -8,7 +8,6 @@
     },
     "Name": "PythonWebAppwithFlaskWJHMZ",
     "Instrumentation": {
-      "host": "nunite",
       "domain": "mybluemix.net"
     }
   },
