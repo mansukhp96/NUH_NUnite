@@ -9,7 +9,7 @@ quiz_dir = 'quizzes'
 
 quizzes = {}
 for quiz in os.listdir(quiz_dir):
-    print 'Loading', quiz
+    print('Loading', quiz)
     quizzes[quiz] = json.loads(open(os.path.join(quiz_dir, quiz)).read())
 
 @app.route('/')
@@ -24,7 +24,8 @@ def quiz(id):
     questions = list(enumerate(quiz["questions"]))
     random.shuffle(questions)
     quiz["questions"] = map(lambda t: t[1], questions)
-    ordering = map(lambda t: t[0], questions)
+    #ordering = map(lambda t: t[0], questions)
+    ordering = questions
 
     return flask.render_template('quiz.html', id=id, quiz=quiz, quiz_ordering=json.dumps(ordering))
 
@@ -32,17 +33,17 @@ def quiz(id):
 def check_quiz(id):
     ordering = json.loads(flask.request.form['ord'])
     quiz = copy.deepcopy(quizzes[id])
-    print flask.request.form
+    print(flask.request.form)
     quiz['questions'] = sorted(quiz['questions'], key=lambda q: ordering.index(quiz['questions'].index(q)))
-    print quiz['questions']
+    print(quiz['questions'])
     answers = dict( (int(k), quiz['questions'][int(k)]['options'][int(v)]) for k, v in flask.request.form.items() if k != 'ord' )
 
-    print answers
+    print(answers)
 
     if not len(answers.keys()):
         return flask.redirect(flask.url_for('quiz', id=id))
 
-    for k in xrange(len(ordering)):
+    for k in range(len(ordering)):
         if k not in answers:
             answers[k] = [None, False]
 
